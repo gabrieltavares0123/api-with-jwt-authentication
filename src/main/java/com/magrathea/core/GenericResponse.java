@@ -1,4 +1,4 @@
-package com.magrathea.product.core;
+package com.magrathea.core;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

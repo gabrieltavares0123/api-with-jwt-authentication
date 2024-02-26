@@ -1,6 +1,6 @@
 package com.magrathea.product.product.controller;
 
-import com.magrathea.product.core.GenericResponse;
+import com.magrathea.core.GenericResponse;
 import com.magrathea.product.product.domain.dto.ProductRequestDTO;
 import com.magrathea.product.product.domain.dto.ProductResponseDTO;
 import com.magrathea.product.product.domain.service.LoadAllProducts;
