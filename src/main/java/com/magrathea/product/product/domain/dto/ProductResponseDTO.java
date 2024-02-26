@@ -1,6 +1,6 @@
-package com.magrathea.product.food.domain.dto;
+package com.magrathea.product.product.domain.dto;
 
-import com.magrathea.product.food.data.ProductEntity;
+import com.magrathea.product.product.data.ProductEntity;
 
 import java.util.UUID;
 

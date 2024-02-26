@@ -1,10 +1,10 @@
-package com.magrathea.product.food.controller;
+package com.magrathea.product.product.controller;
 
 import com.magrathea.product.core.GenericResponse;
-import com.magrathea.product.food.domain.dto.ProductRequestDTO;
-import com.magrathea.product.food.domain.dto.ProductResponseDTO;
-import com.magrathea.product.food.domain.service.LoadAllProducts;
-import com.magrathea.product.food.domain.service.SaveProduct;
+import com.magrathea.product.product.domain.dto.ProductRequestDTO;
+import com.magrathea.product.product.domain.dto.ProductResponseDTO;
+import com.magrathea.product.product.domain.service.LoadAllProducts;
+import com.magrathea.product.product.domain.service.SaveProduct;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

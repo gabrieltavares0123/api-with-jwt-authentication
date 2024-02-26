@@ -1,4 +1,4 @@
-package com.magrathea.product.food.data;
+package com.magrathea.product.product.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
