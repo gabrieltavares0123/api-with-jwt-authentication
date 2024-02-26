@@ -1,7 +1,7 @@
-package com.magrathea.authentication.data;
+package com.magrathea.api.auth.data.entity;
 
 
-import com.magrathea.authentication.enums.UserRole;
+import com.magrathea.api.auth.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

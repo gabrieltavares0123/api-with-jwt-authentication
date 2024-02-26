@@ -1,6 +1,6 @@
-package com.magrathea.product.product.data;
+package com.magrathea.api.product.data;
 
-import com.magrathea.product.product.domain.dto.ProductRequestDTO;
+import com.magrathea.api.product.domain.dto.ProductRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

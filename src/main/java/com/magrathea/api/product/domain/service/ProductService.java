@@ -1,9 +1,9 @@
-package com.magrathea.product.product.domain.service;
+package com.magrathea.api.product.domain.service;
 
-import com.magrathea.product.product.data.ProductEntity;
-import com.magrathea.product.product.data.ProductRepository;
-import com.magrathea.product.product.domain.dto.ProductRequestDTO;
-import com.magrathea.product.product.domain.dto.ProductResponseDTO;
+import com.magrathea.api.product.data.ProductRepository;
+import com.magrathea.api.product.data.ProductEntity;
+import com.magrathea.api.product.domain.dto.ProductRequestDTO;
+import com.magrathea.api.product.domain.dto.ProductResponseDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;

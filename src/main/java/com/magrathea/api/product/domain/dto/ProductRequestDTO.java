@@ -1,4 +1,4 @@
-package com.magrathea.product.product.domain.dto;
+package com.magrathea.api.product.domain.dto;
 
 import java.util.UUID;
 

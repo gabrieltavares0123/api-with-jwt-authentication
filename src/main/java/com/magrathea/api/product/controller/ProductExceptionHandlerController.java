@@ -1,4 +1,4 @@
-package com.magrathea.product.product.controller;
+package com.magrathea.api.product.controller;
 
 public class ProductExceptionHandlerController {
 }
