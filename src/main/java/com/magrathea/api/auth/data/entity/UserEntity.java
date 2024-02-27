@@ -24,8 +24,9 @@ import java.util.UUID;
 public class UserEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private UUID id = null;
     private String username;
+    private String password;
     private UserRole role;
 
     @Override
