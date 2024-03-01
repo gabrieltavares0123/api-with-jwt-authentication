@@ -16,7 +16,7 @@ public class AuthenticationExceptionHandler {
 
     @ExceptionHandler(UserNameIsBlankException.class)
     public ResponseEntity<ExceptionDto> userNameIsBlankHandler(UserNameIsBlankException ex) {
-        logger.error(ex.getHttpStatus().toString());
+        logger.error(ex.getHttpStatus().getReasonPhrase());
         logger.error(ex.getErrorMessage());
         logger.trace(Arrays.toString(ex.getStackTrace()));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
@@ -26,7 +26,7 @@ public class AuthenticationExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<ExceptionDto> userNotFoundHandler(UserNotFoundException ex) {
-        logger.error(ex.getHttpStatus().toString());
+        logger.error(ex.getHttpStatus().getReasonPhrase());
         logger.error(ex.getErrorMessage());
         logger.trace(Arrays.toString(ex.getStackTrace()));
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
@@ -36,7 +36,7 @@ public class AuthenticationExceptionHandler {
 
     @ExceptionHandler(UserPasswordIsBlankException.class)
     public ResponseEntity<ExceptionDto> userPasswordIsEmptyHandler(UserPasswordIsBlankException ex) {
-        logger.error(ex.getHttpStatus().toString());
+        logger.error(ex.getHttpStatus().getReasonPhrase());
         logger.error(ex.getErrorMessage());
         logger.trace(Arrays.toString(ex.getStackTrace()));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
@@ -46,7 +46,7 @@ public class AuthenticationExceptionHandler {
 
     @ExceptionHandler(UserRoleIsNullException.class)
     public ResponseEntity<ExceptionDto> userRoleIsNullHandler(UserRoleIsNullException ex) {
-        logger.error(ex.getHttpStatus().toString());
+        logger.error(ex.getHttpStatus().getReasonPhrase());
         logger.error(ex.getErrorMessage());
         logger.trace(Arrays.toString(ex.getStackTrace()));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
@@ -56,11 +56,21 @@ public class AuthenticationExceptionHandler {
 
     @ExceptionHandler(TokenCreationException.class)
     public ResponseEntity<ExceptionDto> tokenCreationHandler(TokenCreationException ex) {
-        logger.error(ex.getHttpStatus().toString());
+        logger.error(ex.getHttpStatus().getReasonPhrase());
         logger.error(ex.getErrorMessage());
         logger.trace(Arrays.toString(ex.getStackTrace()));
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
                 new ExceptionDto(ex.getHttpStatus(), ex.getErrorMessage())
+        );
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ExceptionDto> runtimeHandler(RuntimeException ex) {
+        logger.error(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
+        logger.error(ex.getMessage());
+        logger.trace(Arrays.toString(ex.getStackTrace()));
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
+                new ExceptionDto(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage())
         );
     }
 }
