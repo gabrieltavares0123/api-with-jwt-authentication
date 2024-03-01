@@ -25,11 +25,11 @@ public class AuthenticationExceptionHandler {
     }
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<ExceptionDto> userNameNotFoundHandler(UserNotFoundException ex) {
+    public ResponseEntity<ExceptionDto> userNotFoundHandler(UserNotFoundException ex) {
         logger.error(ex.getHttpStatus().toString());
         logger.error(ex.getErrorMessage());
         logger.trace(Arrays.toString(ex.getStackTrace()));
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
                 new ExceptionDto(ex.getHttpStatus(), ex.getErrorMessage())
         );
     }
