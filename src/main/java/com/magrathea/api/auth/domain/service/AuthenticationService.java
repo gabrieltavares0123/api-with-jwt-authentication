@@ -26,6 +26,8 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponseDTO login(AuthenticationRequestDTO authenticationRequestDTO) {
+        if (authenticationRequestDTO.username().isBlank()) throw new UserNameIsBlankException();
+        if (authenticationRequestDTO.password().isBlank()) throw new UserPasswordIsBlankException();
         var usernamePassword = new UsernamePasswordAuthenticationToken(authenticationRequestDTO.username(), authenticationRequestDTO.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
